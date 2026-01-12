@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.3.2</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.example</groupId>
+  <artifactId>event-producer</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>contracts-avro</module>
+    <module>producer-app</module>
+  </modules>
+
+  <properties>
+    <java.version>21</java.version>
+    <avro.version>1.12.1</avro.version>
+    <avro.maven.plugin.version>1.11.4</avro.maven.plugin.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>dev.nx.maven</groupId>
+        <artifactId>nx-maven-plugin</artifactId>
+        <version>0.0.11</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
