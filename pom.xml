@@ -29,8 +29,17 @@
       <plugin>
         <groupId>dev.nx.maven</groupId>
         <artifactId>nx-maven-plugin</artifactId>
-        <version>0.0.11</version>
+        <version>0.0.10</version>
       </plugin>
     </plugins>
   </build>
+
+    <!-- ✅ Put this in the PARENT so the parent POM can deploy too -->
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/nx-demo-org/java-example-mq-producer</url>
+    </repository>
+  </distributionManagement>
 </project>
