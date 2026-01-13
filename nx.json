@@ -8,5 +8,6 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "plugins": [
     "@nx/maven"
-  ]
+  ],
+  "nxCloudId": "6965ab39f32b61c468b92b0d"
 }
