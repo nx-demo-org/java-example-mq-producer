@@ -1,8 +1,8 @@
-name: PR - Build and Test
+name: Main - Build and Test
 
-on:
-  pull_request:
-    branches: [ "main" ]
+on: 
+  push:
+      branches: [ "main" ]
 
 permissions:
   contents: read
@@ -12,10 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (full history for affected)
+      - name: Checkout
         uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v5
@@ -31,5 +29,5 @@ jobs:
 
       - name: Build and test
         env:
-          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_PR_SECRET }}
-        run: ./nx affected --target=verify --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} -ntp 
+          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_MAIN_SECRET }}
+        run: ./nx run-many --target=verify -ntp
